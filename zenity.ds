@@ -1,0 +1,5 @@
+(if
+    (matches (application_name) "zenity")
+    (matches (window_name) "Log out)
+    (center)
+)
