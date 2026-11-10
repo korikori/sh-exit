@@ -3,6 +3,7 @@ ans=$(zenity --info --title "Log out" \
   --text "Log out? Choose an option:" \
   --ok-label "Cancel" \
   --extra-button "Log out" \
+  --extra-button "Lock screen" \
   --extra-button "Suspend" \
   --extra-button "Reboot" \
   --extra-button "Power off" \
@@ -12,6 +13,10 @@ if [[ $ans = "Log out" ]]
 then
       echo "Exiting Openbox, please standby..."
       openbox --exit
+elif [[ $ans = "Lock screen" ]]
+then
+      echo "Locking screen, please standby..."
+      betterlockscreen -l
 elif [[ $ans = "Suspend" ]]
 then
       echo "Suspending, please standby..."
